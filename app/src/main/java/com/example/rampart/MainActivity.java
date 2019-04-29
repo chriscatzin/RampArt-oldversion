@@ -1,28 +1,48 @@
 package com.example.rampart;
 
-import android.content.ContentValues;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    SQLiteOpenHelper openHelper;
+    RelativeLayout rellay_Profile, rellay_Register;
+
+    /*SQLiteOpenHelper openHelper;
     SQLiteDatabase db;
     Button _btnregister;
     EditText _txtfname, _txtlname, _txtpass, _txtemail, _txtphone;
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_user);
+        setContentView(R.layout.welcome);
 
-        openHelper = new DatabaseHelper(this);
+        rellay_Profile = findViewById(R.id.rellay_Profile);
+        rellay_Register = findViewById(R.id.rellay_Register);
+
+        rellay_Profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Profile.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        });
+
+        rellay_Register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Register.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        });
+
+
+        /*openHelper = new DatabaseHelper(this);
 
         _btnregister = (Button)findViewById(R.id.btnregister);
         _txtfname = (EditText) findViewById(R.id.txtfname);
@@ -56,5 +76,6 @@ public class MainActivity extends AppCompatActivity {
         contentValues.put(DatabaseHelper.COL_SIX, phone);
         long id = db.insert(DatabaseHelper.TABLE_NAME, null, contentValues);
 
+    }*/
     }
 }
