@@ -49,7 +49,7 @@
                             android:contentDescription="image2"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/rampartlogo" />
+                            android:src="@drawable/profile" />
 
                         <TextView
                             android:id="@+id/tv1"
@@ -98,7 +98,7 @@
                             android:contentDescription="image2"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/rampartlogo" />
+                            android:src="@drawable/register" />
 
                         <TextView
                             android:id="@+id/tv2"
@@ -147,7 +147,7 @@
                             android:contentDescription="image3"
                             android:padding="8dp"
                             android:scaleType="centerInside"
-                            android:src="@drawable/rampartlogo" />
+                            android:src="@drawable/chat" />
 
                         <TextView
                             android:id="@+id/tv3"

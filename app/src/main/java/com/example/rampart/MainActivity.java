@@ -8,7 +8,7 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    RelativeLayout rellay_Profile, rellay_Register;
+    RelativeLayout rellay_Profile, rellay_Register, rellay_Chat;
 
     /*SQLiteOpenHelper openHelper;
     SQLiteDatabase db;
@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         rellay_Profile = findViewById(R.id.rellay_Profile);
         rellay_Register = findViewById(R.id.rellay_Register);
+        rellay_Chat = findViewById(R.id.rellay_Chat);
 
         rellay_Profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Register.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        });
+
+        rellay_Chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Chat.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
